@@ -1,0 +1,16 @@
+{
+  "name": "apartment",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sqlitecloud/drivers": "^1.0.653",
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
