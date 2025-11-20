@@ -9,9 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sqlitecloud/drivers": "^1.0.653",
-    "@capacitor-community/speech-recognition": "^7.0.1",
-    "@capacitor-community/sqlite": "^7.0.2",
+   "sqlite3": "^5.1.7"
+    "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0"
   }
