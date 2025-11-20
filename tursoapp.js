@@ -394,7 +394,7 @@ async function addTransaction(db,transactions,forEditing,errMsg)
       }
      // const stmt = `Insert Into FAccounting Values('${voucherNo}'${SNo},${account1No},'${voucherDate}','${dueDate}','${narration}',${account2No},${amount},'${trType}','${lNarration}','${chequeNo}'`
      stmt = `Insert Into FAccounting Values(?,?,?,?,?,?,?,?,?,?,?)`;
-     console.log(stmt);
+    // console.log(stmt);
       const result = await runAsync(txn,stmt, [voucherNo,SNo,account1No,voucherDate,dueDate,narration,account2No,amount,trType,lNarration,chequeNo]);
     }
     await txn.commit(); 
