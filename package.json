@@ -13,6 +13,6 @@
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-    "@libsql/client": "^0.15.15",
+    "@libsql/client": "^0.15.15"
   }
 }
