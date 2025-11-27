@@ -1100,7 +1100,7 @@ app.get('/api/data/report/generalledger/:fromDate/:toDate/:accountGroup/:account
 	    let sStmt = `Select Vcode,Account1_No ,VNo As VoucherNo,Sum(Amt) As Amount,Max(Account2_No) As Account2_No,Max(VDate) As VoucherDate,Max(Narr) as Narration,Max(LNarr) as LNarration,Max(ChkNo) as ChequeNo From (${sStmtDr} Union All ${sStmtCr} Union All ${sStmtOPDr} Union All ${sStmtOPCr}) FAOuter Group By FAOuter.Account1_No,FAOuter.Account2_No,FAOuter.VNo `;
 
 
-	    let sStmtFinal = `Select ROW_NUMBER() OVER (ORDER BY MastDr.Name,VoucherDate,VoucherNo) AS RowNo,Account1_No,Account2_No,VoucherNo,STRFTIME('%d/%m/%Y', VoucherDate) VoucherDate,Amount,Narration,LNarration,MastDr.Name as Account1_Name,MastCr.Name as Account2_Name,ChequeNo from (${sStmt}) FAFinal,Mast1 MastDr,Mast1 MastCr Where (MastDr.Id =  FAFinal.Account1_No) And  (MastCr.Id =  FAFinal.Account2_No)   order by MastDr.Name,VoucherDate,VCode,VoucherNo`;
+	    let sStmtFinal = `Select ROW_NUMBER() OVER (ORDER BY MastDr.Name,VoucherDate,VCode,VoucherNo) AS RowNo,Account1_No,Account2_No,VoucherNo,STRFTIME('%d/%m/%Y', VoucherDate) VoucherDate,Amount,Narration,LNarration,MastDr.Name as Account1_Name,MastCr.Name as Account2_Name,ChequeNo from (${sStmt}) FAFinal,Mast1 MastDr,Mast1 MastCr Where (MastDr.Id =  FAFinal.Account1_No) And  (MastCr.Id =  FAFinal.Account2_No)   order by MastDr.Name,VoucherDate,VCode,VoucherNo`;
 
         //con sole.log("stmt dr " + sStmtDr);
         //con sole.log("stmt cr "+sStmtCr);
